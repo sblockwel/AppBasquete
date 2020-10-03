@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.jogadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarJogadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarJogadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarJogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarJogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -59,15 +59,6 @@
             this.jogadorToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.jogadorToolStripMenuItem.Text = "Jogador";
             // 
-            // jogoToolStripMenuItem
-            // 
-            this.jogoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarJogoToolStripMenuItem,
-            this.consultarJogoToolStripMenuItem});
-            this.jogoToolStripMenuItem.Name = "jogoToolStripMenuItem";
-            this.jogoToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.jogoToolStripMenuItem.Text = "Jogo";
-            // 
             // cadastrarJogadorToolStripMenuItem
             // 
             this.cadastrarJogadorToolStripMenuItem.Name = "cadastrarJogadorToolStripMenuItem";
@@ -80,16 +71,25 @@
             this.consultarJogadoresToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.consultarJogadoresToolStripMenuItem.Text = "Consultar Jogadores";
             // 
+            // jogoToolStripMenuItem
+            // 
+            this.jogoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarJogoToolStripMenuItem,
+            this.consultarJogoToolStripMenuItem});
+            this.jogoToolStripMenuItem.Name = "jogoToolStripMenuItem";
+            this.jogoToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.jogoToolStripMenuItem.Text = "Jogo";
+            // 
             // cadastrarJogoToolStripMenuItem
             // 
             this.cadastrarJogoToolStripMenuItem.Name = "cadastrarJogoToolStripMenuItem";
-            this.cadastrarJogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarJogoToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.cadastrarJogoToolStripMenuItem.Text = "Cadastrar Jogo";
             // 
             // consultarJogoToolStripMenuItem
             // 
             this.consultarJogoToolStripMenuItem.Name = "consultarJogoToolStripMenuItem";
-            this.consultarJogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarJogoToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.consultarJogoToolStripMenuItem.Text = "Consultar Jogos";
             // 
             // FormMain

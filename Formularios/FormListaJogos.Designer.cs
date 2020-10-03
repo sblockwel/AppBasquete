@@ -188,6 +188,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormListaJogos";
             this.Text = "Consulta jogos";
+            this.Load += new System.EventHandler(this.FormListaJogos_Load);
             this.toolBar.ResumeLayout(false);
             this.toolBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataJogos)).EndInit();

@@ -293,9 +293,10 @@
             this.Controls.Add(this.lblNome);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(443, 255);
-            this.MinimumSize = new System.Drawing.Size(443, 0);
+            this.MinimumSize = new System.Drawing.Size(443, 39);
             this.Name = "FormJogador";
             this.Text = "Cadastro de jogador";
+            this.Load += new System.EventHandler(this.FormJogador_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

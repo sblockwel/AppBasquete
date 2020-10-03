@@ -147,6 +147,7 @@
             this.MinimumSize = new System.Drawing.Size(320, 200);
             this.Name = "FormJogo";
             this.Text = "Cadastro de jogo";
+            this.Load += new System.EventHandler(this.FormJogo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

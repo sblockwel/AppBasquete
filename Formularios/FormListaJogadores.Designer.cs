@@ -199,9 +199,10 @@
             this.Controls.Add(this.dataListaJogadores);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(690, 315);
-            this.MinimumSize = new System.Drawing.Size(0, 315);
+            this.MinimumSize = new System.Drawing.Size(16, 315);
             this.Name = "FormListaJogadores";
             this.Text = "Consultar jogadores";
+            this.Load += new System.EventHandler(this.FormListaJogadores_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListaJogadores)).EndInit();
