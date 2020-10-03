@@ -69,6 +69,7 @@
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseMnemonic = false;
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // btnNovo
             // 
@@ -80,6 +81,7 @@
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseMnemonic = false;
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnSalvar
             // 
@@ -90,6 +92,7 @@
             this.btnSalvar.TabIndex = 108;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // txtPlacar
             // 

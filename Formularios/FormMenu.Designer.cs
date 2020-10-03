@@ -64,12 +64,14 @@
             this.cadastrarJogadorToolStripMenuItem.Name = "cadastrarJogadorToolStripMenuItem";
             this.cadastrarJogadorToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.cadastrarJogadorToolStripMenuItem.Text = "Cadastrar Jogador";
+            this.cadastrarJogadorToolStripMenuItem.Click += new System.EventHandler(this.cadastrarJogadorToolStripMenuItem_Click);
             // 
             // consultarJogadoresToolStripMenuItem
             // 
             this.consultarJogadoresToolStripMenuItem.Name = "consultarJogadoresToolStripMenuItem";
             this.consultarJogadoresToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.consultarJogadoresToolStripMenuItem.Text = "Consultar Jogadores";
+            this.consultarJogadoresToolStripMenuItem.Click += new System.EventHandler(this.consultarJogadoresToolStripMenuItem_Click);
             // 
             // jogoToolStripMenuItem
             // 
@@ -83,14 +85,16 @@
             // cadastrarJogoToolStripMenuItem
             // 
             this.cadastrarJogoToolStripMenuItem.Name = "cadastrarJogoToolStripMenuItem";
-            this.cadastrarJogoToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.cadastrarJogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastrarJogoToolStripMenuItem.Text = "Cadastrar Jogo";
+            this.cadastrarJogoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarJogoToolStripMenuItem_Click);
             // 
             // consultarJogoToolStripMenuItem
             // 
             this.consultarJogoToolStripMenuItem.Name = "consultarJogoToolStripMenuItem";
-            this.consultarJogoToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.consultarJogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarJogoToolStripMenuItem.Text = "Consultar Jogos";
+            this.consultarJogoToolStripMenuItem.Click += new System.EventHandler(this.consultarJogoToolStripMenuItem_Click);
             // 
             // FormMain
             // 

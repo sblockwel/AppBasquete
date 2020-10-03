@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,16 +39,18 @@
             this.lblFiltro = new System.Windows.Forms.ToolStripLabel();
             this.comboPesquisa = new System.Windows.Forms.ToolStripComboBox();
             this.dataListaJogadores = new System.Windows.Forms.DataGridView();
-            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDataNasc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnIdade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTecnico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNumCamisa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataNascDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tecnicoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numCamisaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jogadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListaJogadores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jogadorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -98,6 +101,7 @@
             this.dataListaJogadores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataListaJogadores.AutoGenerateColumns = false;
             this.dataListaJogadores.BackgroundColor = System.Drawing.SystemColors.MenuBar;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -109,14 +113,15 @@
             this.dataListaJogadores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataListaJogadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListaJogadores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnId,
-            this.ColumnNome,
-            this.ColumnDataNasc,
-            this.ColumnIdade,
-            this.ColumnSexo,
-            this.ColumnTime,
-            this.ColumnTecnico,
-            this.ColumnNumCamisa});
+            this.idDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.dataNascDataGridViewTextBoxColumn,
+            this.idadeDataGridViewTextBoxColumn,
+            this.sexoDataGridViewTextBoxColumn,
+            this.timeDataGridViewTextBoxColumn,
+            this.tecnicoDataGridViewTextBoxColumn,
+            this.numCamisaDataGridViewTextBoxColumn});
+            this.dataListaJogadores.DataSource = this.jogadorBindingSource;
             this.dataListaJogadores.Location = new System.Drawing.Point(12, 28);
             this.dataListaJogadores.MultiSelect = false;
             this.dataListaJogadores.Name = "dataListaJogadores";
@@ -126,69 +131,77 @@
             this.dataListaJogadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataListaJogadores.Size = new System.Drawing.Size(650, 236);
             this.dataListaJogadores.TabIndex = 2;
+            this.dataListaJogadores.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListaJogadores_CellContentDoubleClick);
+            this.dataListaJogadores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListaJogadores_CellContentDoubleClick);
+            this.dataListaJogadores.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataListaJogadores_CellFormatting);
             // 
-            // ColumnId
+            // idDataGridViewTextBoxColumn
             // 
-            this.ColumnId.HeaderText = "Id";
-            this.ColumnId.Name = "ColumnId";
-            this.ColumnId.ReadOnly = true;
-            this.ColumnId.Width = 40;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 40;
             // 
-            // ColumnNome
+            // nomeDataGridViewTextBoxColumn
             // 
-            this.ColumnNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnNome.DataPropertyName = "Nome";
-            this.ColumnNome.HeaderText = "Jogador";
-            this.ColumnNome.Name = "ColumnNome";
-            this.ColumnNome.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome do jogador";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // ColumnDataNasc
+            // dataNascDataGridViewTextBoxColumn
             // 
-            this.ColumnDataNasc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnDataNasc.DataPropertyName = "DataNasc";
-            this.ColumnDataNasc.HeaderText = "Data de Nascimento";
-            this.ColumnDataNasc.Name = "ColumnDataNasc";
-            this.ColumnDataNasc.ReadOnly = true;
+            this.dataNascDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataNascDataGridViewTextBoxColumn.DataPropertyName = "DataNasc";
+            this.dataNascDataGridViewTextBoxColumn.HeaderText = "Data nascimento";
+            this.dataNascDataGridViewTextBoxColumn.Name = "dataNascDataGridViewTextBoxColumn";
+            this.dataNascDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // ColumnIdade
+            // idadeDataGridViewTextBoxColumn
             // 
-            this.ColumnIdade.DataPropertyName = "Idade";
-            this.ColumnIdade.HeaderText = "Idade";
-            this.ColumnIdade.Name = "ColumnIdade";
-            this.ColumnIdade.ReadOnly = true;
-            this.ColumnIdade.Width = 60;
+            this.idadeDataGridViewTextBoxColumn.DataPropertyName = "Idade";
+            this.idadeDataGridViewTextBoxColumn.HeaderText = "Idade";
+            this.idadeDataGridViewTextBoxColumn.Name = "idadeDataGridViewTextBoxColumn";
+            this.idadeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idadeDataGridViewTextBoxColumn.Width = 60;
             // 
-            // ColumnSexo
+            // sexoDataGridViewTextBoxColumn
             // 
-            this.ColumnSexo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnSexo.DataPropertyName = "Sexo";
-            this.ColumnSexo.HeaderText = "Sexo";
-            this.ColumnSexo.Name = "ColumnSexo";
-            this.ColumnSexo.ReadOnly = true;
+            this.sexoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
+            this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
+            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
+            this.sexoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // ColumnTime
+            // timeDataGridViewTextBoxColumn
             // 
-            this.ColumnTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnTime.DataPropertyName = "Time";
-            this.ColumnTime.HeaderText = "Time";
-            this.ColumnTime.Name = "ColumnTime";
-            this.ColumnTime.ReadOnly = true;
+            this.timeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.timeDataGridViewTextBoxColumn.DataPropertyName = "Time";
+            this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
+            this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
+            this.timeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // ColumnTecnico
+            // tecnicoDataGridViewTextBoxColumn
             // 
-            this.ColumnTecnico.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnTecnico.DataPropertyName = "Tecnico";
-            this.ColumnTecnico.HeaderText = "Técnico";
-            this.ColumnTecnico.Name = "ColumnTecnico";
-            this.ColumnTecnico.ReadOnly = true;
+            this.tecnicoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tecnicoDataGridViewTextBoxColumn.DataPropertyName = "Tecnico";
+            this.tecnicoDataGridViewTextBoxColumn.HeaderText = "Técnico";
+            this.tecnicoDataGridViewTextBoxColumn.Name = "tecnicoDataGridViewTextBoxColumn";
+            this.tecnicoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // ColumnNumCamisa
+            // numCamisaDataGridViewTextBoxColumn
             // 
-            this.ColumnNumCamisa.DataPropertyName = "NumCamisa";
-            this.ColumnNumCamisa.HeaderText = "N° Camisa";
-            this.ColumnNumCamisa.Name = "ColumnNumCamisa";
-            this.ColumnNumCamisa.ReadOnly = true;
-            this.ColumnNumCamisa.Width = 50;
+            this.numCamisaDataGridViewTextBoxColumn.DataPropertyName = "NumCamisa";
+            this.numCamisaDataGridViewTextBoxColumn.HeaderText = "N° Camisa";
+            this.numCamisaDataGridViewTextBoxColumn.Name = "numCamisaDataGridViewTextBoxColumn";
+            this.numCamisaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numCamisaDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // jogadorBindingSource
+            // 
+            this.jogadorBindingSource.DataSource = typeof(AppBasquete.Models.Jogador);
             // 
             // FormListaJogadores
             // 
@@ -206,6 +219,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListaJogadores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jogadorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,13 +233,14 @@
         private System.Windows.Forms.ToolStripLabel lblFiltro;
         private System.Windows.Forms.ToolStripComboBox comboPesquisa;
         private System.Windows.Forms.DataGridView dataListaJogadores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDataNasc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIdade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTecnico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumCamisa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataNascDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tecnicoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numCamisaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource jogadorBindingSource;
     }
 }

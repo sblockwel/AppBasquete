@@ -2,6 +2,7 @@
 using AppBasquete.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -18,9 +19,39 @@ namespace AppBasquete.Formularios
         private void FormListaJogos_Load(object sender, EventArgs e)
         {
             var contexto = new ContextoApp();
-            dataJogos.DataSource = contexto.Jogos
-                .Include(y => y.Jogador).OrderBy(x => x.Jogador).ThenBy(y => y.Placar).ToList();
+            var jogos = contexto.Jogos
+                .Include(y => y.Jogador).OrderBy(x => x.Id).ToList();
             comboPesquisa.SelectedIndex = 0;
+            var placares = new List<int>();
+            int pontoMin = 0;
+            int pontoMax = 0;
+            int quebraMin = 0;
+            int quebraMax = 0;
+            foreach (var jogo in jogos)
+            {
+                if (placares.Count == 0)
+                {
+                    pontoMax = pontoMin = jogo.Placar;
+                }
+                else
+                {
+                    if (placares.Where(placar => jogo.Placar > placar).Any())
+                    {
+                        pontoMax = jogo.Placar;
+                        quebraMax += 1;
+                    }
+                    if (placares.Where(placar => jogo.Placar < placar).Any())
+                    {
+                        pontoMin = jogo.Placar;
+                        quebraMin += 1;
+                    }
+                }
+                placares.Add(jogo.Placar);
+
+                dataJogos.Rows.Add(
+                    jogo.Id, jogo.Jogador, jogo.Placar, pontoMin, pontoMax, quebraMin, quebraMax);
+            }
+            dataJogos.AllowUserToAddRows = false;
         }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
@@ -49,11 +80,16 @@ namespace AppBasquete.Formularios
             dataJogos.DataSource = query.Include(y => y.Jogador).OrderBy(x => x.Id).ToList();
         }
 
-        private void dataJogos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataJogos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataJogos.CurrentRow.DataBoundItem != null)
+            if (dataJogos.CurrentRow.Index >= 0)
             {
-                var jogo = (Jogo)dataJogos.CurrentRow.DataBoundItem;
+                var linha = dataJogos.CurrentRow;
+                var jogo = new Jogo()
+                {
+                    Id = (int)linha.Cells[0].Value,
+                    Placar = (int)linha.Cells[2].Value
+                };
                 var form = new FormJogo(jogo);
                 form.Show();
             }

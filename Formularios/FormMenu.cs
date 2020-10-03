@@ -11,25 +11,24 @@ namespace AppBasquete
             InitializeComponent();
         }
 
-        private void menuCadastrarJogador_Click(object sender, EventArgs e)
+        private void cadastrarJogadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FormJogador().Show();
         }
 
-        private void menuCadastrarJogo_Click(object sender, EventArgs e)
+        private void consultarJogadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormListaJogadores().Show();
+        }
+
+        private void cadastrarJogoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FormJogo().Show();
         }
 
-        private void menuConsultarJogo_Click(object sender, EventArgs e)
+        private void consultarJogoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FormListaJogos().Show();
-        }
-
-        private void MenuConsultarJogador_Click(object sender, EventArgs e)
-{
-            var form = new FormListaJogadores();
-            form.Show();
         }
     }
 }

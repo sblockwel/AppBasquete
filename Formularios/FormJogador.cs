@@ -113,12 +113,6 @@ namespace AppBasquete.Formularios
             txtIdade.Text = ((int)(DateTime.Today - dateTimeDataNasc.Value).TotalDays / 365).ToString();
         }
 
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            jogador = null;
-            CarregarDados();
-        }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             if (ValidarCampos)
@@ -135,6 +129,12 @@ namespace AppBasquete.Formularios
                     MessageBox.Show("Gravado com sucesso!");
                 }
             }
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            jogador = null;
+            CarregarDados();
         }
 
         private void btnApagar_Click(object sender, EventArgs e)

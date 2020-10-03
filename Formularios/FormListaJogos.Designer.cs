@@ -38,8 +38,8 @@
             this.comboPesquisa = new System.Windows.Forms.ToolStripComboBox();
             this.dataJogos = new System.Windows.Forms.DataGridView();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPlacar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColummNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPlacar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPontosMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPontosMáx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnQuebraMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -114,8 +114,8 @@
             this.dataJogos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataJogos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnId,
-            this.ColumnPlacar,
             this.ColummNome,
+            this.ColumnPlacar,
             this.ColumnPontosMin,
             this.ColumnPontosMáx,
             this.ColumnQuebraMin,
@@ -127,6 +127,8 @@
             this.dataJogos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataJogos.Size = new System.Drawing.Size(515, 206);
             this.dataJogos.TabIndex = 4;
+            this.dataJogos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataJogos_CellContentDoubleClick);
+            this.dataJogos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataJogos_CellContentDoubleClick);
             // 
             // ColumnId
             // 
@@ -135,13 +137,6 @@
             this.ColumnId.ReadOnly = true;
             this.ColumnId.Width = 40;
             // 
-            // ColumnPlacar
-            // 
-            this.ColumnPlacar.HeaderText = "Placar";
-            this.ColumnPlacar.Name = "ColumnPlacar";
-            this.ColumnPlacar.ReadOnly = true;
-            this.ColumnPlacar.Width = 60;
-            // 
             // ColummNome
             // 
             this.ColummNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -149,6 +144,13 @@
             this.ColummNome.HeaderText = "Nome Jogador";
             this.ColummNome.Name = "ColummNome";
             this.ColummNome.ReadOnly = true;
+            // 
+            // ColumnPlacar
+            // 
+            this.ColumnPlacar.HeaderText = "Placar";
+            this.ColumnPlacar.Name = "ColumnPlacar";
+            this.ColumnPlacar.ReadOnly = true;
+            this.ColumnPlacar.Width = 60;
             // 
             // ColumnPontosMin
             // 
@@ -206,8 +208,8 @@
         private System.Windows.Forms.ToolStripComboBox comboPesquisa;
         private System.Windows.Forms.DataGridView dataJogos;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPlacar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColummNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPlacar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPontosMin;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPontosMáx;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQuebraMin;

@@ -61,6 +61,7 @@
             this.btnApagar.TabIndex = 42;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // txtCamisa
             // 
@@ -89,6 +90,7 @@
             this.btnNovo.TabIndex = 39;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnSalvar
             // 
@@ -99,6 +101,7 @@
             this.btnSalvar.TabIndex = 38;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // txtIdade
             // 
@@ -152,6 +155,7 @@
             this.comboSexo.Name = "comboSexo";
             this.comboSexo.Size = new System.Drawing.Size(113, 26);
             this.comboSexo.TabIndex = 33;
+            this.comboSexo.SelectedIndexChanged += new System.EventHandler(this.comboSexo_SelectedIndexChanged);
             // 
             // lblSexo
             // 
@@ -194,6 +198,7 @@
             this.dateTimeDataNasc.Name = "dateTimeDataNasc";
             this.dateTimeDataNasc.Size = new System.Drawing.Size(118, 24);
             this.dateTimeDataNasc.TabIndex = 29;
+            this.dateTimeDataNasc.ValueChanged += new System.EventHandler(this.dateTimeDataNasc_ValueChanged);
             // 
             // lblTime
             // 
