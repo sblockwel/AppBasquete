@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>CestaBasquete.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -155,18 +158,54 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dados\ContextoApp.cs" />
-    <Compile Include="Formularios\Form1.cs">
+    <Compile Include="Formularios\FormJogador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Formularios\FormJogador.Designer.cs">
+      <DependentUpon>FormJogador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormJogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormJogo.Designer.cs">
+      <DependentUpon>FormJogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormListaJogadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormListaJogadores.Designer.cs">
+      <DependentUpon>FormListaJogadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormListaJogos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormListaJogos.Designer.cs">
+      <DependentUpon>FormListaJogos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Jogador.cs" />
     <Compile Include="Modelos\Jogo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FormJogador.resx">
+      <DependentUpon>FormJogador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormJogo.resx">
+      <DependentUpon>FormJogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormListaJogadores.resx">
+      <DependentUpon>FormListaJogadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormListaJogos.resx">
+      <DependentUpon>FormListaJogos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -191,7 +230,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="CestaBasquete.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
