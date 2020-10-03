@@ -5,7 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace AppBasquete.Models
 {
     public class Jogador
-    {        public int Id { get; set; }
+    {        
+        public int Id { get; set; }
         public string Nome { get; set; }
         public DateTime DataNasc { get; set; }
         [NotMapped]
