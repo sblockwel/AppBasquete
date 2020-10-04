@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace AppBasquete.Formularios
 {
+    /// <summary>
+    /// Classe responsável por listar jogos.
+    /// </summary>
     public partial class FormListaJogos : Form
     {
         public FormListaJogos()

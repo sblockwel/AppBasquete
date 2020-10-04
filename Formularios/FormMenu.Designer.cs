@@ -85,14 +85,14 @@
             // cadastrarJogoToolStripMenuItem
             // 
             this.cadastrarJogoToolStripMenuItem.Name = "cadastrarJogoToolStripMenuItem";
-            this.cadastrarJogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarJogoToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.cadastrarJogoToolStripMenuItem.Text = "Cadastrar Jogo";
             this.cadastrarJogoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarJogoToolStripMenuItem_Click);
             // 
             // consultarJogoToolStripMenuItem
             // 
             this.consultarJogoToolStripMenuItem.Name = "consultarJogoToolStripMenuItem";
-            this.consultarJogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarJogoToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.consultarJogoToolStripMenuItem.Text = "Consultar Jogos";
             this.consultarJogoToolStripMenuItem.Click += new System.EventHandler(this.consultarJogoToolStripMenuItem_Click);
             // 
@@ -106,6 +106,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.Text = "AppBasquete";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

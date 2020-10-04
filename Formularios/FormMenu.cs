@@ -30,5 +30,10 @@ namespace AppBasquete
         {
             new FormListaJogos().Show();
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

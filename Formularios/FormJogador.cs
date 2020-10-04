@@ -7,15 +7,25 @@ using System.Windows.Forms;
 
 namespace AppBasquete.Formularios
 {
-    public partial class FormJogador : Form
+    /// <summary>
+    /// Classe responsável por gerenciar cadastro de jogadores.
+    /// </summary>
+     public partial class FormJogador : Form
     {
         Jogador jogador;
+        /// <summary>
+        /// Método construtor da classe.
+        /// </summary>
+        /// <param name="jogador">Opcional. Jogador a ser carregado no formulário.</param>
         public FormJogador(Jogador jogador = null)
         {
             InitializeComponent();
             this.jogador = jogador;
         }
 
+        /// <summary>
+        /// Valida se todos os campos obrigatórios foram preenchidos.
+        /// </summary>
         public bool ValidarCampos
         {
             get
@@ -48,7 +58,10 @@ namespace AppBasquete.Formularios
                 return true;
             }
         }
-
+        /// <summary>
+        /// Caso o jogador tenha sido informado, carrega os dados nos campos do formulário.
+        /// Caso não informado inicializa as variáveis interna.
+        /// </summary>
         void CarregarDados()
         {
             if (jogador == null)
@@ -87,7 +100,9 @@ namespace AppBasquete.Formularios
             comboTecnico.Text = jogador.Tecnico;
             txtCamisa.Text = jogador.NumCamisa;
         }
-
+        /// <summary>
+        /// Armazena os dados do formulário na variável do jogador. 
+        /// </summary>
         void CarregarJogador()
         {
             jogador.Id = txtIdJogador.Text == "Novo" ? 0 : int.Parse(txtIdJogador.Text);
@@ -107,7 +122,6 @@ namespace AppBasquete.Formularios
             jogador.Tecnico = comboTecnico.Text;
             jogador.NumCamisa = txtCamisa.Text;
         }
-
         private void comboSexo_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtOutro.Visible = comboSexo.SelectedIndex == 2;

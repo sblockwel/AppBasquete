@@ -1,10 +1,11 @@
 ﻿using AppBasquete.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
-using System;
 
 namespace AppBasquete.Data
 {
+    /// <summary>
+    /// Classe responsável por gerenciar o contexto de conexão com o banco de dados.
+    /// </summary>
     public class ContextoApp : DbContext
     {
         public ContextoApp()

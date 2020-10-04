@@ -7,17 +7,26 @@ using System.Windows.Forms;
 
 namespace AppBasquete.Formularios
 {
+    /// <summary>
+    /// Classe responsável por gerenciar cadastro de jogos.
+    /// </summary>
     public partial class FormJogo : Form
     {
         ContextoApp contexto;
-
         Jogo jogo;
+        /// <summary>
+        /// Método construtor da classe.
+        /// </summary>
+        /// <param name="jogo">Opcional. Jogo a ser carregado no formulário.</param>
         public FormJogo(Jogo jogo = null)
         {
             contexto = new ContextoApp();
             InitializeComponent();
             this.jogo = jogo;
         }
+        /// <summary>
+        /// Valida se todos os campos obrigatórios foram preenchidos.
+        /// </summary>
         public bool ValidarCampos
         {
             get
@@ -37,7 +46,10 @@ namespace AppBasquete.Formularios
                 return true;
             }
         }
-
+        /// <summary>
+        /// Caso o jogo tenha sido informado, carrega os dados nos campos do formulário.
+        /// Caso não informado inicializa as variáveis interna.
+        /// </summary>
         void CarregarDados()
         {
             if (jogo == null)
@@ -49,7 +61,9 @@ namespace AppBasquete.Formularios
             comboJogador.SelectedItem = jogo.Jogador;
 
         }
-
+        /// <summary>
+        /// Armazena os dados do formulário na variável do jogo. 
+        /// </summary>
         void CarregarJogo()
         {
             jogo.Placar = int.Parse(txtPlacar.Text);
