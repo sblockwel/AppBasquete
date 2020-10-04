@@ -1,5 +1,7 @@
 ﻿using AppBasquete.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
+using System;
 
 namespace AppBasquete.Data
 {

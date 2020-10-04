@@ -35,12 +35,12 @@ namespace AppBasquete.Formularios
                 }
                 else
                 {
-                    if (placares.Where(placar => jogo.Placar > placar).Any())
+                    if (placares.Where(placar => placar < jogo.Placar).Any() && jogo.Placar > pontoMax)
                     {
                         pontoMax = jogo.Placar;
                         quebraMax += 1;
                     }
-                    if (placares.Where(placar => jogo.Placar < placar).Any())
+                    if (placares.Where(placar => placar > jogo.Placar ).Any() && jogo.Placar < pontoMin)
                     {
                         pontoMin = jogo.Placar;
                         quebraMin += 1;

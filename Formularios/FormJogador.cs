@@ -62,6 +62,11 @@ namespace AppBasquete.Formularios
                 dateTimeDataNasc.Value = jogador.DataNasc;
                 txtIdade.Text = jogador.Idade.ToString();
             }
+            else
+            {
+                dateTimeDataNasc.Value = DateTime.Today;
+                txtIdade.Text = string.Empty;
+            }
             string Sexo = string.IsNullOrEmpty(jogador.Sexo) ? "" : jogador.Sexo;
             if (comboSexo.Items.Contains(Sexo))
             {
@@ -71,6 +76,12 @@ namespace AppBasquete.Formularios
             {
                 comboSexo.SelectedIndex = 2;
                 txtOutro.Text = Sexo;
+            }
+            else
+            {
+                txtOutro.Visible = false;
+                lblOutro.Visible = false;
+                comboSexo.SelectedIndex = -1;
             }
             comboTime.Text = jogador.Time;
             comboTecnico.Text = jogador.Tecnico;
