@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AppBasquete.Data;
+using AppBasquete.Models;
+using System;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AppBasquete
@@ -16,7 +16,54 @@ namespace AppBasquete
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            PopularDados();
+            Application.Run(new FormMain());            
+        }
+
+        public static void PopularDados()
+        {
+            var contexto = new ContextoApp();
+            var jogador = new Jogador()
+            {
+                Id = 1,
+                Nome = "Maria",
+                DataNasc = DateTime.Parse("03/10/2005"),
+                Sexo = "Feminino",
+                Time = "Time 1",
+                Tecnico = "Técnico 1",
+                NumCamisa = "22"
+            };
+            if (!contexto.Jogadores.Any())
+            {
+                contexto.Jogadores.Add(jogador);
+            }
+            if (!contexto.Jogos.Any())
+            {
+                contexto.Jogos.Add(new Jogo()
+                {
+                    Jogador = jogador,
+                    Placar = 12
+                });
+
+                contexto.Jogos.Add(new Jogo()
+                {
+                    Jogador = jogador,
+                    Placar = 24
+                });
+
+                contexto.Jogos.Add(new Jogo()
+                {
+                    Jogador = jogador,
+                    Placar = 10
+                });
+
+                contexto.Jogos.Add(new Jogo()
+                {
+                    Jogador = jogador,
+                    Placar = 24
+                });
+                contexto.SaveChanges();
+            }
         }
     }
 }
